@@ -1,0 +1,12 @@
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - docker build -t test .
+      - docker images
+    - stage: test
+      script: docker run --rm test
+    - script: docker run --rm test
