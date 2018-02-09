@@ -7,6 +7,4 @@ jobs:
       script:
       - docker build -t test .
       - docker images
-    - stage: test
-      script: docker run --rm test
-    - script: docker run --rm test
+      - docker run test
